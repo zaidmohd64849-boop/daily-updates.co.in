@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Post - Daily Update</title>
+
+<meta name="description" content="Latest Government Jobs, Admit Card, Results and Sarkari Updates">
+
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>DAILY UPDATE</h1>
+<p>Latest Jobs | Admit Card | Results</p>
+</div>
+
+<div class="container">
+
+<h2 id="title"></h2>
+
+<div id="article"></div>
+
+<br><br>
+
+<a id="downloadLink" target="_blank"></a>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyDBSS9bPh6oXLKIzUHrhqjXzGXWz-2ecTU",
+authDomain: "daily-updates-f1147.firebaseapp.com",
+projectId: "daily-updates-f1147",
+storageBucket: "daily-updates-f1147.firebasestorage.app",
+messagingSenderId: "831611220658",
+appId: "1:831611220658:web:9d9356dbd1c142d93ecfab"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+
+async function loadPost(){
+
+const docRef = doc(db,"posts",id);
+
+const docSnap = await getDoc(docRef);
+
+if(docSnap.exists()){
+
+const data = docSnap.data();
+
+document.getElementById("title").innerText = data.title;
+
+/* HTML ARTICLE SUPPORT */
+
+document.getElementById("article").innerHTML = data.article;
+
+document.getElementById("downloadLink").href = data.link;
+
+document.getElementById("downloadLink").innerText = "Download / Official Website";
+
+}
+
+}
+
+loadPost();
+
+</script>
+
+</body>
+</html>
