@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:20px;
+}
+
+.container{
+background:white;
+padding:20px;
+border-radius:8px;
+max-width:600px;
+margin:auto;
+}
+
+input,textarea,select{
+width:100%;
+padding:10px;
+margin-top:10px;
+}
+
+button{
+padding:8px 12px;
+margin-top:10px;
+cursor:pointer;
+}
+
+.post{
+border-bottom:1px solid #ddd;
+padding:10px 0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+let password = prompt("Enter Admin Password");
+
+if(password !== "daily updates 2000"){
+alert("Access Denied");
+window.location.href="index.html";
+}
+
+</script>
+
+<div class="container">
+
+<h2>Add New Post</h2>
+
+<input type="text" id="title" placeholder="Post Title">
+
+<textarea id="article" placeholder="Write Full Article Here (HTML allowed)" rows="10"></textarea>
+
+<input type="text" id="link" placeholder="Download / Official Link">
+
+<select id="category">
+
+<option value="jobs">Latest Jobs</option>
+
+<option value="admit">Admit Card</option>
+
+<option value="result">Results</option>
+
+<option value="more information">More Information</option>
+
+</select>
+
+<button onclick="addPost()">Add Post</button>
+
+<h2>All Posts</h2>
+
+<div id="postList"></div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyDBSS9bPh6oXLKIzUHrhqjXzGXWz-2ecTU",
+authDomain: "daily-updates-f1147.firebaseapp.com",
+projectId: "daily-updates-f1147",
+storageBucket: "daily-updates-f1147.firebasestorage.app",
+messagingSenderId: "831611220658",
+appId: "1:831611220658:web:9d9356dbd1c142d93ecfab"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+window.addPost = async function(){
+
+let title = document.getElementById("title").value;
+
+let article = document.getElementById("article").value;
+
+let link = document.getElementById("link").value;
+
+let category = document.getElementById("category").value;
+
+if(title === "" || article === "" || link === ""){
+
+alert("Fill all fields");
+
+return;
+
+}
+
+await addDoc(collection(db,"posts"),{
+
+title:title,
+
+article:article,
+
+link:link,
+
+category:category,
+
+date:new Date()
+
+});
+
+alert("Post Added");
+
+location.reload();
+
+}
+
+async function loadPosts(){
+
+let list = document.getElementById("postList");
+
+list.innerHTML="";
+
+const querySnapshot = await getDocs(collection(db,"posts"));
+
+querySnapshot.forEach((docSnap)=>{
+
+let data = docSnap.data();
+
+list.innerHTML += `
+<div class="post">
+${data.title}
+<br>
+<button onclick="deletePost('${docSnap.id}')">Delete</button>
+</div>
+`;
+
+});
+
+}
+
+window.deletePost = async function(id){
+
+await deleteDoc(doc(db,"posts",id));
+
+alert("Post Deleted");
+
+loadPosts();
+
+}
+
+loadPosts();
+
+</script>
+
+</body>
+</html>
