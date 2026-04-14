@@ -55,6 +55,45 @@
 </div>
 
 <script type="module" src="script.js"></script>
+<script type="module">
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDBSS9bPh6oXLKIzUHrhqjXzGXWz-2ecTU",
+  authDomain: "daily-updates-f1147.firebaseapp.com",
+  projectId: "daily-updates-f1147",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function loadPosts(){
+let container = document.getElementById("posts");
+container.innerHTML = "Loading...";
+
+const querySnapshot = await getDocs(collection(db,"posts"));
+
+container.innerHTML = "";
+
+querySnapshot.forEach((doc)=>{
+let data = doc.data();
+
+let div = document.createElement("div");
+div.innerHTML = `
+<h3>${data.title}</h3>
+<p>${data.article}</p>
+<a href="${data.link}" target="_blank">Download</a>
+<hr>
+`;
+
+container.appendChild(div);
+});
+}
+
+loadPosts();
+
+  </script>
 </body>
 </html>
