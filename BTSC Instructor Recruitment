@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BTSC Instructor Recruitment 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            background: #fff;
+            padding: 15px;
+            border: 2px solid #000;
+        }
+        h1 {
+            text-align: center;
+            background: #cc0000;
+            color: #fff;
+            padding: 10px;
+        }
+        .highlight {
+            background: yellow;
+            padding: 8px;
+            font-weight: bold;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th {
+            background: #000;
+            color: #fff;
+        }
+        th, td {
+            padding: 8px;
+        }
+        .section {
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            margin-top: 15px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #0073e6;
+            color: #fff;
+            padding: 10px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background: #005bb5;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Bihar BTSC Instructor Recruitment 2026</h1>
+
+<div class="highlight">
+📢 Apply Online: 15 April 2026 to 15 May 2026
+</div>
+
+<h2>📄 Article (Full Details)</h2>
+
+<p>
+Bihar Technical Service Commission (BTSC) has released the official notification for 
+<strong>Instructor Recruitment 2026</strong>. A total of <b>726 posts</b> are available for various trades. 
+Candidates who have completed <b>ITI in relevant trade</b> can apply for this recruitment.
+</p>
+
+<p>
+The online application process will start from <b>15 April 2026</b> and the last date to apply is 
+<b>15 May 2026</b>. Interested candidates are advised to read the full notification carefully before applying.
+</p>
+
+<p>
+This is a great opportunity for ITI pass candidates to get a government job in Bihar. 
+Selection will be done as per BTSC rules.
+</p>
+
+<div class="section">📅 Important Dates</div>
+<table>
+<tr><td>Application Start</td><td>15/04/2026</td></tr>
+<tr><td>Last Date</td><td>15/05/2026</td></tr>
+<tr><td>Fee Last Date</td><td>15/05/2026</td></tr>
+<tr><td>Exam Date</td><td>As per Schedule</td></tr>
+<tr><td>Admit Card</td><td>Before Exam</td></tr>
+</table>
+
+<div class="section">💰 Application Fee</div>
+<table>
+<tr><td>General / OBC / EWS</td><td>₹100</td></tr>
+<tr><td>SC / ST</td><td>₹100</td></tr>
+<tr><td>All Female</td><td>₹100</td></tr>
+</table>
+
+<div class="section">🎯 Age Limit (01/08/2026)</div>
+<table>
+<tr><td>Minimum Age</td><td>18 Years</td></tr>
+<tr><td>Male Max Age</td><td>37 Years</td></tr>
+<tr><td>Female Max Age</td><td>40 Years</td></tr>
+</table>
+
+<div class="section">📊 Vacancy Details (Total: 726)</div>
+<table>
+<tr><th>Post</th><th>Total</th><th>Eligibility</th></tr>
+<tr><td>Instructor</td><td>726</td><td>ITI in Related Trade</td></tr>
+</table>
+
+<div class="section">📌 Trade Wise Vacancy</div>
+<table>
+<tr><th>Post</th><th>Total</th></tr>
+<tr><td>Surveyor</td><td>84</td></tr>
+<tr><td>Machinist</td><td>82</td></tr>
+<tr><td>Automobile</td><td>04</td></tr>
+<tr><td>Leather</td><td>04</td></tr>
+<tr><td>Welder</td><td>84</td></tr>
+<tr><td>Mechanic Tractor</td><td>01</td></tr>
+<tr><td>Agriculture Machinery</td><td>01</td></tr>
+<tr><td>Fitter</td><td>84</td></tr>
+<tr><td>Electronics</td><td>130</td></tr>
+<tr><td>Electrician</td><td>252</td></tr>
+</table>
+
+<div class="section">📝 How to Apply</div>
+<ul>
+<li>Apply online between 15 April to 15 May 2026</li>
+<li>Read full notification carefully</li>
+<li>Keep documents ready (Photo, Sign, ID)</li>
+<li>Fill form carefully and preview</li>
+<li>Pay application fee</li>
+<li>Take printout of final form</li>
+</ul>
+
+<div class="section">🔗 Important Links</div>
+
+<a href="https://btsc.pariksha.nic.in/Online_App/Notifications.aspx" class="btn">👉 Apply Online</a>
+<a href=" https://btsc.bihar.gov.in/sites/default/files/circulars/1099.pdf" class="btn">📄 Download Short Notice
+
+</a>
+<a href=" https://btsc.bihar.gov.in/ class="btn">🏠 Official Website</a>
+
+</div>
+
+</body>
+</html>
